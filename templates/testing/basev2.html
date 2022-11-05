@@ -183,7 +183,7 @@
   </nav><!-- End Header/Navbar -->
 
   <!-- ======= Intro Section ======= -->
-  <div class="intro intro-carousel swiper position-relative">
+  <!-- <div class="intro intro-carousel swiper position-relative"> -->
 
     <div class="swiper-wrapper">
 
@@ -265,6 +265,40 @@
     </div>
     <div class="swiper-pagination"></div>
   </div><!-- End Intro Section -->
+
+  <!-- ======= TRYING MY OWN INTRO SECTION SLIDER WITH EFFICIENT CODE AND REUSABLE =======-->
+  <div class="intro intro-carousel swiper position-relative">
+  <div class="swiper-wrapper">
+    {% for prop in featured%}
+    <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({% static 'assets' %}/img/featured/{{prop.id}}.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <p class="intro-title-top">{{prop.city}}, {{prop.state}}
+                      <br> {{prop.pincode}}
+                    </p>
+                    <h1 class="intro-title mb-4 ">
+                      <span class="color-b">{{prop.number}} </span> {{prop.fname}}
+                      <br> {{prop.sname}}
+                    </h1>
+                    <p class="intro-subtitle intro-price">
+                      <a href="#"><span class="price-a">SELL | $ {{prop.price}}</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+  <!-- End Intro Section -->
 
   <main id="main">
 
@@ -982,17 +1016,16 @@
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-                sed aute irure.
+                Search over lakh+ properties on tradeland.com. Buy or sell residential & commercial property. Check real estate prices, property trends. We believe in quality and trust.
               </p>
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> contact@example.com
+                  <span class="color-text-a">Phone .</span> 777-777-7777
                 </li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> +54 356 945234
+                  <span class="color-text-a">Email .</span> contact@tradeland.com
                 </li>
               </ul>
             </div>
@@ -1121,7 +1154,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TradeLand
           -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Rohith Peddi, Rishav Das</a>
           </div>
         </div>
       </div>
