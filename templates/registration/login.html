@@ -43,6 +43,7 @@
 </style>
 </head>
 <body>
+	{% load crispy_forms_tags %}
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -58,31 +59,15 @@
 						Login
 					</span>
 					<div style="margin:auto; text-align: center;">
-                        {% for field in form %}
-                            {% if field.errors %}
-                                <div class="control-group error">
-                                    <label class="wrap-input100 control-label">{{ field.label }}</label> 
-                                    <div class="controls">{{ field }}
-                                        <span class="help-inline">
-                                            {% for error in  field.errors %}{{ error }}{% endfor %}
-                                        </span>
-                                    </div>
-                                </div>
-                            {% else %}
-                                <div class="control-group">
-                                    <label class="control-label">{{ field.label }}</label> 
-                                    <div class="controls input100">{{ field }}
-                                        {% if field.help_text %}
-                                            <p class="help-inline"><small>{{ field.help_text }}</small></p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                        {{form|crispy}}
                     <p>Don't have an account? Create one <a href="/sign-up">Here</a></p>
 					<br>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" >Login</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #068932; border-color: #068932;">Login</button>
+                    </div>
+					<br>
+					<div class="form-actions">
+                        <button onclick="location.href='/home'" class="btn btn-primary" style="background-color: black; border-color: black;">Cancel</button>
                     </div>
 				</div>
 				</form>
@@ -106,7 +91,7 @@
 <!--===============================================================================================-->
 	<script src="{% static 'registration/vendor'%}/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="{%static ''%}js/main.js"></script>
+	<script src="{%static 'registration'%}/js/main.js"></script>
 
 </body>
 </html>

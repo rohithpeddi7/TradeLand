@@ -60,13 +60,22 @@
 					<span class="login100-form-title p-b-23" style="margin-top: 0px; padding-top: 0px;">
 						Register
 					</span>
+					<h1>Basic Information</h1>
 					<br>
 					{{form|crispy}}
+					<br>
+					<h1>Additional Information</h1>
+					<br>
+					{{pform|crispy}}
 					<br>
                     <p>Have an account? Login <a href="/login">Here</a></p>
 					<br>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" >Register</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #068932; border-color: #068932;">Register</button>
+                    </div>
+					<br>
+					<div class="form-actions">
+                        <button onclick="location.href='/home'" class="btn btn-primary" style="background-color: black; border-color: black;">Cancel</button>
                     </div>
 				</div>
 				</form>
@@ -90,7 +99,7 @@
 <!--===============================================================================================-->
 	<script src="{% static 'registration/vendor'%}/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="{%static ''%}js/main.js"></script>
+	<script src="{%static 'registration'%}/js/main.js"></script>
 
 </body>
 </html>
